@@ -1,0 +1,678 @@
+@font-face {
+  font-family: "Kode";
+  src: local('Fode-Medium'),
+        local('Fode Medium'),
+        url(../fonts/Kode-Medium.woff2) format("woff2"),
+        url(../fonts/Kode-Medium.woff) format("woff"),
+        url(../fonts/Kode-Medium.eot) format("eot");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.modal--close, .field {
+  pointer-events: none;
+  opacity: 0;
+}
+.field {
+  position: absolute;
+}
+.field--active {
+  pointer-events: all;
+  opacity: 1;
+}
+.modal_bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
+
+.wrapper {
+  padding: 50px;
+  --width: 1920px;
+  --width_inventory_btn: 110px;
+  --width_inventory: 1025px;
+  --height_inventory: 525px;
+  --width_slot: 90px;
+  --width_field: 1000px;
+  --width_fishing: 400px;
+  --width_person: 40px;
+  --height_modal_move: 300px;
+  --width_modal_line: 100px;
+  --width_modal_line_position: 0px;
+  --width_modal_fishing_img: 300px;
+  --width_modal_info_fish_inventory: 245px;
+  --height_modal_info_fish_inventory: 90px;
+  --width_shop: 100px;
+  --height_shop: 100px;
+  --position_shop_x: 200px;
+  --position_shop_y: 200px;
+  --width_person: 40px;
+  --height_person: 40px;
+  --width_shop_price_arrow: 100px;
+}
+.menu {
+  text-align: right;
+  position: relative;
+}
+.inventory {
+  width: var(--width_inventory_btn);
+  margin-left: auto;
+}
+.inventory_btn {
+  width: 110px;
+  height: 110px;
+  box-sizing: border-box;
+  border: 5px solid #1c1c1c;
+  border-radius: 25px;
+  transition: all 0.5s;
+}
+.inventory_btn:hover {
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  background-color: #1c1c1c;
+}
+.inventory_btn path {
+  transition: all 0.5s;
+}
+.inventory_btn:hover path {
+  stroke: #fff;
+  fill: #1c1c1c;
+}
+.inventory_wrapper {
+  position: absolute;
+  top: calc((100vh - var(--height_inventory)) / 2 - 50px);
+  left: calc((var(--width) - var(--width_inventory) - 100px) / 2);
+  width: var(--width_inventory);
+  height: var(--height_inventory);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 5px solid #1c1c1c;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: opacity 1s;
+  z-index: 10;
+}
+.slot_shop,
+.slot {
+  box-sizing: border-box;
+  width: var(--width_slot);
+  height: var(--width_slot);
+  border: 5px solid #1c1c1c;
+  border-radius: 25px;
+  background-color: #fff;
+  transition: all 0.5s;
+  position: relative;
+}
+.slot_shop:hover,
+.slot:hover {
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.modal_shop_close,
+.inventory_close {
+  position: absolute;
+  top: calc((100vh - var(--height_inventory)) / 2 - 30px);
+  right: calc((var(--width) - var(--width_inventory) - 100px) / 2 - var(--width_slot) - 25px);
+  width: var(--width_slot);
+  height: var(--width_slot);
+  background-color: #be5252;
+  border-radius: 20px;
+  border: 5px solid #803535;
+  transition: all 0.5s, opacity 1s;
+  z-index: 10;
+}
+.modal_shop_close {
+  top: calc((100vh - var(--height_modal_move) - 450px) / 2);
+  right: calc((var(--width) - var(--width_modal_move)) / 2 - var(--width_slot) - 10px);
+  z-index: 10;
+}
+.modal_shop_close_wrapper,
+.inventory_close_wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+.modal_shop_close_wrapper span,
+.inventory_close_wrapper span {
+  position: absolute;
+  top: 20px;
+  left: -5px;
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  rotate: 45deg;
+  background-color: #fff;
+}
+.modal_shop_close_wrapper span:last-child,
+.inventory_close_wrapper span:last-child {
+  rotate: -45deg;
+}
+.modal_shop_close:hover,
+.inventory_close:hover {
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.inventory--close {
+  pointer-events: none;
+  opacity: 0;
+}
+.inventory_bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+
+.field_wrapper {
+  border: 5px solid #1c1c1c;
+  border-radius: 20px;
+  width: var(--width_field);
+  height: var(--width_field);
+  margin: auto;
+  position: relative;
+}
+.button_fishing {
+  text-align: center;
+  width: var(--width_fishing);
+  font-family: 'Kode';
+  font-size: 32px;
+  padding: 10px 51px;
+  padding-top: 5px;
+  color: #1c1c1c;
+  border: 5px solid #1c1c1c;
+  border-radius: 10px;
+  position: absolute;
+  top: -100px;
+  left: calc((100% - var(--width_fishing)) / 2);
+  font-weight: 400;
+  transition: all 0.5s, transform 0.15s;
+}
+.button_fishing:hover {
+  color: #fff;
+  background-color: #1c1c1c;
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+}
+.button_fishing:active {
+  transform: scale(1.1);
+}
+.person {
+  background-color: #1c1c1c;
+  position: absolute;
+  z-index: 1;
+  width: var(--width_person);
+  height: var(--height_person);
+}
+.fields {
+  width: 100%;
+  height: 100%;
+}
+.field_1 {
+  width: 100%;
+  height: 100%;
+}
+
+.modal_shop_prices,
+.modal_shop_main,
+.modal_shop_open,
+.modal_move,
+.modal_fishing,
+.modal_fishing_lose, 
+.modal_fishing_result,
+.modal_full_inventory {
+  position: absolute;
+  top: calc((100vh - var(--height_modal_move)) / 2);
+  left: calc((100vw - var(--width_modal_move)) / 2);
+  width: var(--width_modal_move);
+  height: var(--height_modal_move);
+  border: 5px solid #1c1c1c;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 25px;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.modal_shop_open_text,
+.modal_move_text,
+.modal_fishing_lose_text {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 50px;
+}
+.modal_shop_open_buttons,
+.modal_move_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.modal_shop_open_buttons button,
+.modal_move_buttons button,
+.modal_fishing_lose_button,
+.modal_fishing_result_buttons button,
+.modal_full_inventory button {
+  font-family: 'Kode';
+  font-size: 32px;
+  padding: 10px 50px;
+  padding-top: 5px;
+  border: 5px solid #1c1c1c;
+  border-radius: 10px;
+  color: #1c1c1c;
+  transition: all 0.5s;
+  text-align: center;
+}
+.modal_shop_open_buttons button:hover,
+.modal_move_buttons button:hover,
+.modal_fishing_lose_button:hover,
+.modal_fishing_result_buttons button:hover,
+.modal_full_inventory button:hover {
+  color: #fff;
+  background-color: #1c1c1c;
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+}
+.modal_shop_open_btn_accept,
+.modal_move_btn_accept{
+  margin-right: 100px;
+}
+
+.modal_fishing, .modal_fishing_lose {
+  text-align: center;
+}
+.modal_fishing_line {
+  width: calc(100% - 10px);
+  height: 20px;
+  background-color: #84d2ff;
+  border-radius: 20px;
+  border: 5px solid #1c1c1c;
+  margin-top: 35px;
+  position: relative;
+}
+.modal_fishing_line_green {
+  height: 20px;
+  background-color: #4bff54;
+  position: absolute;
+  top: 0;
+  left: var(--width_modal_line_position);
+  width: var(--width_modal_line);
+}
+.modal_fishing_line_dot {
+  width: 5px;
+  height: 20px;
+  background-color: #1c1c1c;
+  position: absolute;
+  z-index: 1;
+}
+.modal_fishing_button {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 32px;
+  padding: 10px 50px;
+  padding-top: 5px;
+  border: 5px solid #1c1c1c;
+  border-radius: 10px;
+  color: #1c1c1c;
+  transition: all 0.5s;
+  margin-top: 25px;
+}
+.modal_fishing_button:hover {
+  color: #fff;
+  background-color: #1c1c1c;
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+}
+.modal_shop_open_buttons button:active,
+.button--active,
+.modal_fishing_button:active,
+.modal_fishing_lose_button:active,
+.modal_fishing_result_buttons button:active,
+.modal_full_inventory button:active {
+  color: #fff;
+  background-color: #1c1c1c;
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.modal_fishing_ui {
+  display: flex;
+  justify-content: space-between;
+}
+.modal_fishing_timer {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 64px;
+}
+.modal_fishing_difficalty {
+  display: flex;
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 64px;
+  margin-left: 40px;
+  margin-right: 25px;
+}
+
+.modal_fishing_hearts {
+  display: flex;
+}
+.modal_fishing_heart {
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  border: 5px solid #be5252;
+  background-color: #be5252;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-top: 10px;
+  transition: all 0.5s;
+}
+.modal_fishing_heart:last-child {
+  margin-right: 0;
+}
+.heart {
+  background-color: rgba(139, 139, 139, 0.5);
+  border: 5px solid #1c1c1c;
+  transform: scale(0.95);
+}
+.modal_fishing_lose_button {
+  margin-right: 0;
+  margin-top: 50px;
+}
+.modal_fishing_result {
+  height: calc(var(--height_modal_move) + 500px);
+  top: calc((100vh - var(--height_modal_move) - 450px) / 2);
+  padding: 50px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.modal_fishing_result_img {
+  border: 5px solid #1c1c1c;
+  border-radius: 20px;
+  width: var(--width_modal_fishing_img);
+  height: var(--width_modal_fishing_img);
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.modal_fishing_result_img img {
+  border-radius: 15px;
+  width: 100%;
+}
+.modal_fishing_result_name {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+.modal_fishing_result_weight {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 48px;
+  font-weight: 500;
+}
+.modal_fishing_result_buttons button:last-child {
+  padding: 10px 35px;
+  padding-top: 5px;
+  margin-left: 100px;
+}
+.slot_shop_img,
+.slot_img {
+  width: 100%;
+  border-radius: 20px;
+}
+.slot_shop_wrapper,
+.slot_wrapper {
+  position: absolute;
+  top: calc(0px - var(--height_modal_info_fish_inventory) - 10px);
+  left: -5px;
+  width: var(--width_modal_info_fish_inventory);
+  height: var(--height_modal_info_fish_inventory);
+  border: 5px solid #1c1c1c;
+  border-radius: 25px;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 5px 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.slot_shop_wrapper {
+  height: calc(var(--height_modal_info_fish_inventory) + 45px);
+  top: calc(0px - var(--height_modal_info_fish_inventory) - 55px);
+}
+
+.slot_shop_name,
+.slot_name {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 32px;
+  text-align: left;
+  margin-bottom: 3px;
+}
+.slot_shop_weight,
+.slot_weight {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 24px;
+  text-align: left;
+  font-weight: 700;
+}
+.slot_shop_weight {
+  margin-bottom: 10px;
+}
+.slot_shop_price {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+}
+.slot_shop_price_text {
+  margin-right: 5px;
+}
+.slot_shop_price_pointfish img {
+  width: 100%;
+}
+.slot_shop_price_pointfish {
+  margin-top: 1px;
+  width: 20px;
+}
+.slot_shop:hover .slot_shop_wrapper,
+.slot:hover .slot_wrapper {
+  opacity: 1;
+}
+.Legendary {
+  border: 5px solid #e20404
+}
+.Epic {
+  border: 5px solid #9900ff
+}
+.Rare {
+  border: 5px solid #00ff15
+}
+.Uncommon {
+  border: 5px solid #0051ff
+}
+
+.time {
+  font-family: 'Kode';
+  font-size: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.time_day {
+  font-size: 48px;
+  text-align-last: left;
+}
+.light {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 5;
+  transition: opacity 1728s;
+  /* transition: opacity 14400ms;  */  /*for test 1min = 12000*/
+}
+
+.biome {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 32px;
+  position: absolute;
+  left: 0;
+  top: 200px;
+}
+.modal_full_inventory {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.modal_full_inventory_text {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 64px;
+}
+
+.shop {
+  width: var(--width_shop);
+  height: var(--height_shop);
+  position: absolute;
+  top: var(--position_shop_x);
+  left: var(--position_shop_y);
+  z-index: 1;
+}
+.modal_shop_prices,
+.modal_shop_main {
+  height: calc(var(--height_modal_move) + 500px);
+  top: calc((100vh - var(--height_modal_move) - 450px) / 2);
+}
+.modal_shop_main {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+.modal_shop_tab {
+  border: 5px solid #1c1c1c;
+  border-radius: 20px;
+  width: var(--width_modal_info_fish_inventory);
+  padding: 20px;
+  padding-top: 10px;
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 48px;
+  text-align: center;
+  margin-right: 50px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.modal_shop_tab:last-child {
+  margin-right: 0;
+}
+.modal_shop_tabs {
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.5s;
+}
+.tab--active {
+  background-color: #1c1c1c;
+  color: #fff;
+  box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+.modal_shop_prices_arrow_right,
+.modal_shop_prices_arrow_left {
+  width: var(--width_shop_price_arrow);
+  height: var(--width_shop_price_arrow);
+  position: absolute;
+  top: calc((var(--height_modal_move) + 500px - var(--width_shop_price_arrow)) / 2);
+  left: calc(var(--width_shop_price_arrow) * -1 - 10px);
+  cursor: pointer;
+  text-align: center;
+  background-color: #fff;
+  border: 5px solid #1c1c1c;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.modal_shop_prices_arrow_right img,
+.modal_shop_prices_arrow_left img {
+  height: 75%;
+  margin: 10px 0;
+}
+.modal_shop_prices_arrow_right {
+  left: var(--width_modal_move);
+}
+.modal_shop_prices_element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+.modal_shop_prices_element:first-child {
+  margin-top: 0;
+}
+.modal_shop_prices_element p {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: -15px;
+}
+.modal_shop_prices_name {
+  margin-right: 50px;
+}
+.modal_shop_price {
+  margin-right: 10px;
+}
+.modal_shop_prices_arrows {
+  position: relative;
+  width: 50px;
+  height: 60px;
+  margin-left: 20px;
+}
+.modal_shop_prices_arrow_up,
+.modal_shop_prices_arrow_down {
+  position: absolute;
+  top: 11px;
+  left: 0;
+}
+.arrow--close {
+  opacity: 0;
+}
+.balance_text {
+  font-family: 'Kode';
+  color: #1c1c1c;
+  font-size: 48px;
+  margin-right: 15px;
+  margin-top: -10px;
+}
+.balance {
+  display: flex;
+  position: absolute;
+  top: 300px;
+  left: 0;
+}
+.m_s_p_element--close {
+  opacity: 0;
+}

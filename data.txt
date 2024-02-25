@@ -1,0 +1,357 @@
+Pake {
+  0,5-5,5 kg
+  Legendary
+  River
+  74 price
+  #CFD3CD
+}
+Sazan {
+  2-14 kg
+  Legendary
+  River
+  26 price
+  #78858B
+}
+Chub {
+  1-10 kg
+  Legendary
+  River
+  40 price
+  #79553D
+}
+White amur {
+  15-30 kg
+  Legendary
+  River
+  7 price
+  #6A5D4D
+}
+Sheatfish {
+  6-15 kg
+  Legendary
+  River
+  15 price
+  #9C9C9C
+}
+Zander {
+  10-12 kg
+  Epic
+  River
+  10 price
+  #434B4D
+}
+Bream {
+  3-4 kg
+  Epic
+  River
+  31 price
+  #6C6960
+}
+Carp {
+  2-14 kg
+  Epic
+  River
+  21 price
+  #5B3A29
+}
+Asp {
+  4.5-6.5 kg
+  Epic
+  River
+  20 price
+  #B8B799
+}
+Eel {
+  3.5-6.5 kg
+  Epic
+  River
+  24 price
+  #332F2C
+}
+Perch {
+  2.5-3.5 kg
+  Rare
+  River
+  28 price
+  #287233
+}
+Crucian {
+  0.2-0.6 kg
+  Rare
+  River
+  259 price
+  #CC0605
+}
+Tench {
+  0.5-0.9 kg
+  Rare
+  River
+  127 price
+  #F44611
+}
+Ide {
+  2-4 kg
+  Rare
+  River
+  31 price
+  #1E1E1E
+}
+Podust {
+  0.7-1.1 kg
+  Rare
+  River
+  95 price
+  #231A24
+}
+Bersh {
+  1-2 kg
+  Uncommon
+  River
+  41 price
+  #3B83BD
+}
+Gustera {
+  0.5-1.5 kg
+  Uncommon
+  River
+  69 price
+  #5E2129
+}
+White-eye {
+  0.5-1 kg
+  Uncommon
+  River
+  81 price
+  #2271B3
+}
+Gudgeon {
+  0.1-0.2 kg
+  Uncommon
+  River
+  408 price
+  #45322E
+}
+Ruff {
+  0.5-2.5 kg
+  Uncommon
+  River
+  53 price
+  #1C1C1C
+}
+Roach {
+  0.4-0.8 kg
+  Common
+  River
+  51 price
+  #DE4C8A
+}
+Rudd fish {
+  1-2 kg
+  Common
+  River
+  20 price
+  #18171C
+}
+Chekhon {
+  0.2-1 kg
+  Common
+  River
+  66 price
+  #721422
+}
+Ablet {
+  0.1-0.14 kg
+  Common
+  River
+  229 price
+  #89AC76
+}
+Bystryanka {
+  0.1-0.12 kg
+  Common
+  River
+  239 price
+  #231A24
+}
+Squid {
+  0.5-2 kg
+  Legendary
+  Sea
+  239 price
+  #F80000
+}
+Flying fish {
+  1-3 kg
+  Legendary
+  Sea
+  134 price
+  #6A5F31
+}
+Wahoo {
+  10-20 kg
+  Legendary
+  Sea
+  16 price
+  #287233
+}
+Shark {
+  500-1000 kg
+  Legendary
+  Sea
+  1 price
+  #6F4F28
+}
+Gold fish {
+  0.5-1.5 kg
+  Legendary
+  Sea
+  276 price
+  #781F19
+}
+Sea eel {
+  1-3 kg
+  Epic
+  Sea
+  103 price
+  #8A6642
+}
+Grouper {
+  1-5 kg
+  Epic
+  Sea
+  79 price
+  #EDFF21
+}
+Marlin blue {
+  90-100 kg
+  Epic
+  Sea
+  2 price
+  #F75E25
+}
+Striped marlin {
+  100-150 kg
+  Epic
+  Sea
+  1 price
+  #2E3A23
+}
+Marlin black {
+  150-200 kg
+  Epic
+  Sea
+  1 price
+  #A12312
+}
+Flounder {
+  3-5 kg
+  Rare
+  Sea
+  29 price
+  #C6A664
+}
+Sailfish {
+  40-60 kg
+  Rare
+  Sea
+  2 price
+  #403A3A
+}
+Cod {
+  30-50 kg
+  Rare
+  Sea
+  3 price
+  #E4A010
+}
+Tuna {
+  220-250 kg
+  Rare
+  Sea
+  1 price
+  #1E1E1E
+}
+Catfish {
+  0.5-2.5 kg
+  Rare
+  Sea
+  105 price
+  #282828
+}
+Capelin {
+  0.05-0.25 kg
+  Uncommon
+  Sea
+  790 price
+  #7D7F7D
+}
+Garfish {
+  0.5-1.5 kg
+  Uncommon
+  Sea
+  103 price
+  #193737
+}
+Sea ruff {
+  0.5-3 kg
+  Uncommon
+  Sea
+  70 price
+  #6C6874
+}
+Albula {
+  0.5-3 kg
+  Uncommon
+  Sea
+  11 price
+  #C93C20
+}
+Croaker {
+  60-100 kg
+  Uncommon
+  Sea
+  1 price
+  #434B4D
+}
+Sea crucian {
+  0.5-1.5 kg
+  Common
+  Sea
+  69 price
+  #252850
+}
+Herring {
+  0.3-0.5 kg
+  Common
+  Sea
+  145 price
+  #E6D690
+}
+Mackerel {
+  1-2 kg
+  Common
+  Sea
+  41 price
+  #C7B446
+}
+Pollock {
+  0.5-0.9 kg
+  Common
+  Sea
+  85 price
+  #642424
+}
+Pink salmon {
+  3-5 kg
+  Common
+  Sea
+  14 price
+  #49678D
+}
+
+
+
+
+1 day => 288 min = 4,8 hour = 17280 second = 17280000 ms
+1 hour => 12 min = 720 second = 720000 ms
+1 min => 0,2 min = 12 second = 12000 ms

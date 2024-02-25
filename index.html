@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Fishing</title>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="menu">
+      <li class="inventory"> <!--inventory-->
+        <button class="inventory_btn"> <!--inventory button-->
+          <svg width="70" height="74" viewBox="0 0 70 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="white" stroke="#1c1c1c" stroke-width="3" d="M17 10.5h36s5.5 0 5.5 5.5v51s0 5.5 -5.5 5.5h-36s-5.5 0 -5.5 -5.5v-51s0 -5.5 5.5 -5.5" />
+            <path d="M14 10.5H56C57.3807 10.5 58.5 11.6193 58.5 13V28C58.5 40.4264 48.4264 50.5 36 50.5H34C21.5736 50.5 11.5 40.4264 11.5 28V13C11.5 11.6193 12.6193 10.5 14 10.5Z" fill="white" stroke="#1c1c1c" stroke-width="3"/>
+            <path d="M29 1.5H42C44.4853 1.5 46.5 3.51472 46.5 6V10.5H24.5V6C24.5 3.51472 26.5147 1.5 29 1.5Z" fill="white" stroke="#1c1c1c" stroke-width="3"/>
+            <path d="M11.5 31.5V60.4031C5.85747 59.6681 1.5 54.8429 1.5 49V34C1.5 32.6193 2.61929 31.5 4 31.5H11.5Z" fill="white" stroke="#1c1c1c" stroke-width="3"/>
+            <path d="M58.5 60.4031V31.5H66C67.3807 31.5 68.5 32.6193 68.5 34V49C68.5 54.8429 64.1425 59.6681 58.5 60.4031Z" fill="white" stroke="#1c1c1c" stroke-width="3"/>
+          </svg>
+        </button>
+        <ul class="inventory_wrapper inventory--close"> <!--body inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+          <li class="slot"></li> <!--slot inventory-->
+        </ul>
+        <button class="inventory_close inventory--close"> <!--button close inventory-->
+          <div class="inventory_close_wrapper">
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </li>
+      <div class="time">
+        <p class="time_text">12:00</p>
+        <p class="time_day">1 Day</p>
+      </div>
+      <div class="biome">
+        <p class="biome_text">Biome: Main island</p>
+      </div>
+      <div class="balance">
+        <p class="balance_text">0</p>
+        <img src="img/pointfish.svg" alt="">
+      </div>
+    </ul>
+    <div class="field_wrapper">
+    <button class="button_fishing">Fishing / Space</button>
+    <div class="fields">
+      <div class="light" style="opacity: 0;"></div>
+      <div class="person" style="top: 350px; left: 200px;"></div>
+      <div class="shop">
+        <img src="img/shop.png" alt="">
+      </div>
+      <div class="field_1 field--active field" id="main_field">
+        <img src="img/main_field.png" alt="">
+      </div>
+      <div class="field_2 field">
+        <img src="img/field_biome_1.png" alt="">
+      </div>
+    </div>
+    </div>
+    <div class="modal_bg modal--close"></div>
+    <div class="modal_move modal--close modal"> <!--confirmation window-->
+      <p class="modal_move_text"> <!--window text-->
+        Go to another field?
+      </p>
+      <ul class="modal_move_buttons"> <!--window buttons-->
+        <li class="modal_move_btn_accept"> <!--wnodow button accept-->
+          <button type="button">Accept</button>
+        </li>
+        <li class="modal_move_btn_cancel"> <!--wnodow button cancel-->
+          <button type="button">Cancel</button>
+        </li>
+      </ul>
+    </div>
+    <div class="modal_fishing modal--close modal">
+      <ul class="modal_fishing_ui">
+        <li class="modal_fishing_health">
+          <ul class="modal_fishing_hearts">
+            <li class="modal_fishing_heart"></li>
+            <li class="modal_fishing_heart"></li>
+            <li class="modal_fishing_heart"></li>
+          </ul>
+        </li>
+        <p class="modal_fishing_timer">5:00</p>
+        <li class="modal_fishing_difficalty">
+          <p class="modal_fishing_ready">0</p>
+          <p class="modal_fishing_difficalty_text">/50</p>
+        </li>
+      </ul>
+      <div class="modal_fishing_line">
+        <div class="modal_fishing_line_dot" style="top: 0px; left: 0px;"></div>
+        <div class="modal_fishing_line_green"></div>
+      </div>
+      <button class="modal_fishing_button">Fishing / Space</button>
+    </div>
+    <div class="modal_fishing_lose modal--close modal">
+      <p class="modal_fishing_lose_text">The fish got off :&#40</p>
+      <button class="modal_fishing_lose_button">Exit</button>
+    </div>
+    <div class="modal_fishing_result modal--close modal">
+      <div class="modal_fishing_result_info">
+        <div class="modal_fishing_result_img">
+          <img src="" alt="">
+        </div>
+        <h1 class="modal_fishing_result_name"></h1>
+        <p class="modal_fishing_result_weight"></p>
+      </div>
+      <div class="modal_fishing_result_buttons">
+        <button class="modal_fishing_result_take">Take</button>
+        <button class="modal_fishing_result_let_go">Let go</button>
+      </div>
+    </div>
+    <div class="modal_full_inventory modal--close modal">
+      <p class="modal_full_inventory_text">Your inventory is full</p>
+      <div class="modal_full_inventory_button">
+        <button>Ok</button>
+      </div>
+    </div>
+    <div class="modal_shop_open modal--close modal">
+      <p class="modal_shop_open_text"> <!--window text-->
+        Open shop?
+      </p>
+      <ul class="modal_shop_open_buttons"> <!--window buttons-->
+        <li class="modal_shop_open_btn_accept"> <!--wnodow button accept-->
+          <button type="button">Accept</button>
+        </li>
+        <li class="modal_shop_open_btn_cancel"> <!--wnodow button cancel-->
+          <button type="button">Cancel</button>
+        </li>
+      </ul>
+    </div>
+    <div class="modal_shop">
+      <ul class="modal_shop_tabs modal--close">
+        <li class="modal_shop_tab tab--active">Shop</li>
+        <li class="modal_shop_tab">Prices</li>
+      </ul>
+      <button class="modal_shop_close modal--close">
+        <div class="modal_shop_close_wrapper">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <ul class="modal_shop_main modal--close">
+      </ul>
+      <div class="modal_shop_prices modal--close">
+        <div class="modal_shop_prices_arrow_left">
+          <img src="img/shop/arrow_left.svg" alt="">
+        </div>
+        <div class="modal_shop_prices_arrow_right">
+          <img src="img/shop/arrow_right.svg" alt="">
+        </div>
+        <ul class="modal_shop_prices_elements">
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="modal_shop_prices_element">
+            <p class="modal_shop_prices_name">Pike</p>
+            <p class="modal_shop_price">74</p>
+            <div class="modal_shop_prices_pointfish">
+              <img src="img/pointfish.svg" alt="">
+            </div>
+            <div class="modal_shop_prices_arrows">
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_up.svg" alt="">
+              </div>
+              <div class="modal_shop_prices_arrow_up arrow--close">
+                <img src="img/shop/arrow_down.svg" alt="">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
