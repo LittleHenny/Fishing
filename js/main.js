@@ -878,24 +878,24 @@ document.addEventListener('DOMContentLoaded', function () {
     fishing_btn.blur()
     if (modal_fishing.classList.contains('modal--close')) {
       
-      for (let i = 0; i < fishs_river_common.length; i++) { // ценники для рыб
-        const fish = fishs_river_common[i];
-        let step = (fish.weight_min[1]-fish.weight_min[0])/2
-        let a = (fish.weight_min[0]+step)*0.75
-        let b = (fish.weight_min[1]+step)*0.15
-        let c = (fish.weight_min[2]+step)*0.05
-        let d = (fish.weight_min[3]+step)*0.05
-        console.log(25000/(a+b+c+d));
+      // for (let i = 0; i < fishs_river_common.length; i++) { // ценники для рыб
+      //   const fish = fishs_river_common[i];
+      //   let step = (fish.weight_min[1]-fish.weight_min[0])/2
+      //   let a = (fish.weight_min[0]+step)*0.75
+      //   let b = (fish.weight_min[1]+step)*0.15
+      //   let c = (fish.weight_min[2]+step)*0.05
+      //   let d = (fish.weight_min[3]+step)*0.05
+      //   console.log(25000/(a+b+c+d));
+      // }
+      let fish
+      if ((position_person.x != 0 || position_person.y != 0) && inventory.length < quantity_slots) {
+        fish = generate_fish(field_now.biome)
+        modal_close_open(modal_fishing)
+        fishing_func(fish)
       }
-      // let fish
-      // if ((position_person.x != 0 || position_person.y != 0) && inventory.length < quantity_slots) {
-      //   fish = generate_fish(field_now.biome)
-      //   modal_close_open(modal_fishing)
-      //   fishing_func(fish)
-      // }
-      // if (inventory.length == quantity_slots) {
-      //   modal_close_open(modal_full_inventory)
-      // }
+      if (inventory.length == quantity_slots) {
+        modal_close_open(modal_full_inventory)
+      }
     }
   })
 
